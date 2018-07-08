@@ -1,9 +1,12 @@
 package com.abt.strictmode;
 
+import android.app.Activity;
 import android.app.Application;
 import android.os.Build;
 import android.os.StrictMode;
 import android.support.annotation.RequiresApi;
+
+import java.util.ArrayList;
 
 /**
  * @描述： @SampleApp
@@ -11,6 +14,9 @@ import android.support.annotation.RequiresApi;
  * @创建时间： @07/07/2018
  */
 public class SampleApp extends Application {
+
+    public static final boolean IS_DEBUG = true;
+    public static ArrayList<Activity> sLeakyActivities = new ArrayList<>();
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
